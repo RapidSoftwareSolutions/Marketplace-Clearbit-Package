@@ -1,0 +1,613 @@
+{
+  "package": "Clearbit",
+  "tagline": "Clearbit API",
+  "description": "Clearbit",
+  "image": "http:\/\/logo.clearbit.com\/clearbit.com",
+  "repo": "https:\/\/github.com\/RapidSoftwareSolutions\/Marketplace-Clearbit-Package",
+  "keywords": [
+  ],
+  "accounts": {
+    "domain": "clearbit.com",
+    "credentials": [
+      "apiKey"
+    ]
+  },
+  "blocks": [
+    {
+      "name": "findPerson",
+      "description": "Lets you retrieve social information associated with an email address, such as a person’s name, location and Twitter handle.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Clearbit",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "info": "The email to search",
+          "required": true
+        },
+        {
+          "name": "webhookUrl",
+          "type": "String",
+          "info": "A webhook URL that results will be sent to.",
+          "required": false
+        },
+        {
+          "name": "givenName",
+          "type": "String",
+          "info": "First name of person.",
+          "required": false
+        },
+        {
+          "name": "familyName",
+          "type": "String",
+          "info": "Last name of person. If you have this, passing this is strongly recommended to improve match rates.",
+          "required": false
+        },
+        {
+          "name": "ipAddress",
+          "type": "String",
+          "info": "IP address of the person. If you have this, passing this is strongly recommended to improve match rates.",
+          "required": false
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "The city or country where the person resides.",
+          "required": false
+        },
+        {
+          "name": "company",
+          "type": "String",
+          "info": "The name of the person’s employer.",
+          "required": false
+        },
+        {
+          "name": "companyDomain",
+          "type": "String",
+          "info": "The domain for the person’s employer.",
+          "required": false
+        },
+        {
+          "name": "linkedin",
+          "type": "String",
+          "info": "The LinkedIn URL for the person.",
+          "required": false
+        },
+        {
+          "name": "twitter",
+          "type": "String",
+          "info": "The Twitter handle for the person.",
+          "required": false
+        },
+        {
+          "name": "facebook",
+          "type": "String",
+          "info": "The Facebook URL for the person.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "subscribeToPersonInfoUpdates",
+      "description": "Subscribe to changes in people’s information.  Whenever we receive updates, we’ll post them to the webhook url associated with your account. This will count as an API call.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Clearbit",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "info": "The email to search",
+          "required": true
+        },
+        {
+          "name": "webhookUrl",
+          "type": "String",
+          "info": "A webhook URL that results will be sent to.",
+          "required": false
+        },
+        {
+          "name": "givenName",
+          "type": "String",
+          "info": "First name of person.",
+          "required": false
+        },
+        {
+          "name": "familyName",
+          "type": "String",
+          "info": "Last name of person. If you have this, passing this is strongly recommended to improve match rates.",
+          "required": false
+        },
+        {
+          "name": "ipAddress",
+          "type": "String",
+          "info": "IP address of the person. If you have this, passing this is strongly recommended to improve match rates.",
+          "required": false
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "The city or country where the person resides.",
+          "required": false
+        },
+        {
+          "name": "company",
+          "type": "String",
+          "info": "The name of the person’s employer.",
+          "required": false
+        },
+        {
+          "name": "companyDomain",
+          "type": "String",
+          "info": "The domain for the person’s employer.",
+          "required": false
+        },
+        {
+          "name": "linkedin",
+          "type": "String",
+          "info": "The LinkedIn URL for the person.",
+          "required": false
+        },
+        {
+          "name": "twitter",
+          "type": "String",
+          "info": "The Twitter handle for the person.",
+          "required": false
+        },
+        {
+          "name": "facebook",
+          "type": "String",
+          "info": "The Facebook URL for the person.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "flagPersonInfoAsIncorrect",
+      "description": "This endpoint allows you to let us know if a person doesn’t seem quite right. You can flag a person as incorrect and also optionally pass through a correct set of attributes.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Clearbit",
+          "required": true
+        },
+        {
+          "name": "personId",
+          "type": "String",
+          "info": "Id of the person you’d like to flag as inaccurate.",
+          "required": true
+        },
+        {
+          "name": "givenName",
+          "type": "String",
+          "info": "First name of person.",
+          "required": false
+        },
+        {
+          "name": "familyName",
+          "type": "String",
+          "info": "Last name of person. If you have this, passing this is strongly recommended to improve match rates.",
+          "required": false
+        },
+        {
+          "name": "employmentTitle",
+          "type": "String",
+          "info": "Company title",
+          "required": false
+        },
+        {
+          "name": "companyDomain",
+          "type": "String",
+          "info": "The domain for the person’s employer.",
+          "required": false
+        },
+        {
+          "name": "linkedinHandle",
+          "type": "String",
+          "info": "LinkedIn url (i.e. /pub/alex-maccaw/78/929/ab5)",
+          "required": false
+        },
+        {
+          "name": "twitterHandle",
+          "type": "String",
+          "info": "Twitter screen name",
+          "required": false
+        },
+        {
+          "name": "facebookHandle",
+          "type": "String",
+          "info": "Facebook ID or screen name",
+          "required": false
+        },
+        {
+          "name": "githubHandle",
+          "type": "String",
+          "info": "GitHub handle",
+          "required": false
+        },
+        {
+          "name": "googleplusHandle",
+          "type": "String",
+          "info": "Google Plus handle.",
+          "required": false
+        },
+        {
+          "name": "aboutmeHandle",
+          "type": "String",
+          "info": "about.me handle.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "findCompany",
+      "description": "Allows you to look up a company by their domain",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Clearbit",
+          "required": true
+        },
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "The domain to search",
+          "required": true
+        },
+        {
+          "name": "webhookUrl",
+          "type": "String",
+          "info": "A webhook URL that results will be sent to.",
+          "required": false
+        },
+        {
+          "name": "companyName",
+          "type": "String",
+          "info": "The name of the company.",
+          "required": false
+        },
+        {
+          "name": "linkedin",
+          "type": "String",
+          "info": "The LinkedIn URL for the company.",
+          "required": false
+        },
+        {
+          "name": "twitter",
+          "type": "String",
+          "info": "The Twitter handle for the company.",
+          "required": false
+        },
+        {
+          "name": "facebook",
+          "type": "String",
+          "info": "The Facebook URL for the company.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "flagCompanyInfoAsIncorrect",
+      "description": "You can flag a company as incorrect and also optionally pass through a correct set of attributes.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Clearbit",
+          "required": true
+        },
+        {
+          "name": "companyId",
+          "type": "String",
+          "info": "Id of the company you’d like to flag as inaccurate.",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "Name of company.",
+          "required": false
+        },
+        {
+          "name": "tags",
+          "type": "Array",
+          "info": "List of market categories the company is involved in",
+          "required": false
+        },
+        {
+          "name": "description",
+          "type": "String",
+          "info": "Description of the company",
+          "required": false
+        },
+        {
+          "name": "raised",
+          "type": "Number",
+          "info": "Total amount raised",
+          "required": false
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "Address of company",
+          "required": false
+        },
+        {
+          "name": "facebookHandle",
+          "type": "String",
+          "info": "Facebook ID or screen name",
+          "required": false
+        },
+        {
+          "name": "crunchbaseHandle",
+          "type": "String",
+          "info": "Crunchbase handle",
+          "required": false
+        },
+        {
+          "name": "twitterHandle",
+          "type": "String",
+          "info": "Twitter screen name",
+          "required": false
+        },
+        {
+          "name": "linkedinHandle",
+          "type": "String",
+          "info": "LinkedIn URL (i.e. /pub/alex-maccaw/78/929/ab5)",
+          "required": false
+        },
+        {
+          "name": "employees",
+          "type": "Number",
+          "info": "Amount of employees",
+          "required": false
+        },
+        {
+          "name": "logo",
+          "type": "String",
+          "info": "SRC of company logo",
+          "required": false
+        },
+        {
+          "name": "emailProvider",
+          "type": "Boolean",
+          "info": "Is the domain associated with a free email provider (i.e. Gmail)?",
+          "required": false
+        },
+        {
+          "name": "type",
+          "type": "String",
+          "info": "Type of company (education, government, nonprofit, private, public, personal)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "findInfoByEmail",
+      "description": "This endpoint expects an email address, and will return an object containing both the person and company (if found). A call to the combined lookup will only count as one API call.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Clearbit",
+          "required": true
+        },
+        {
+          "name": "email",
+          "type": "String",
+          "info": "The email to search",
+          "required": true
+        },
+        {
+          "name": "webhookUrl",
+          "type": "String",
+          "info": "A webhook URL that results will be sent to.",
+          "required": false
+        },
+        {
+          "name": "givenName",
+          "type": "String",
+          "info": "First name of person.",
+          "required": false
+        },
+        {
+          "name": "familyName",
+          "type": "String",
+          "info": "Last name of person. If you have this, passing this is strongly recommended to improve match rates.",
+          "required": false
+        },
+        {
+          "name": "ipAddress",
+          "type": "String",
+          "info": "IP address of the person. If you have this, passing this is strongly recommended to improve match rates.",
+          "required": false
+        },
+        {
+          "name": "location",
+          "type": "String",
+          "info": "The city or country where the person resides.",
+          "required": false
+        },
+        {
+          "name": "company",
+          "type": "String",
+          "info": "The name of the person’s employer.",
+          "required": false
+        },
+        {
+          "name": "companyDomain",
+          "type": "String",
+          "info": "The domain for the person’s employer.",
+          "required": false
+        },
+        {
+          "name": "linkedin",
+          "type": "String",
+          "info": "The LinkedIn URL for the person.",
+          "required": false
+        },
+        {
+          "name": "twitter",
+          "type": "String",
+          "info": "The Twitter handle for the person.",
+          "required": false
+        },
+        {
+          "name": "facebook",
+          "type": "String",
+          "info": "The Facebook URL for the person.",
+          "required": false
+        },
+        {
+          "name": "webhookId",
+          "type": "String",
+          "info": "Custom identifier for the webhook request.",
+          "required": false
+        },
+        {
+          "name": "subscribe",
+          "type": "Boolean",
+          "info": "Set to true to subscribe to the changes to the person.",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "autocompleteCompany",
+      "description": "Lets you auto-complete company names and retreive logo and domain information.",
+      "args": [
+        {
+          "name": "apiKey",
+          "type": "credentials",
+          "info": "Api key obtained from Clearbit",
+          "required": true
+        },
+        {
+          "name": "name",
+          "type": "String",
+          "info": "The partial name to search",
+          "required": true
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    },
+    {
+      "name": "findCompanyLogo",
+      "description": "Returns link to company logo",
+      "args": [
+        {
+          "name": "domain",
+          "type": "String",
+          "info": "The domain of the company.",
+          "required": true
+        },
+        {
+          "name": "format",
+          "type": "String",
+          "info": "Image format, either \"png\" or \"jpg\" (defaults to png)",
+          "required": false
+        },
+        {
+          "name": "size",
+          "type": "Number",
+          "info": "Image size: length of longest side in pixels (default is 128)",
+          "required": false
+        },
+        {
+          "name": "greyscale",
+          "type": "Boolean",
+          "info": "Desaturates image if passed (defaults to false)",
+          "required": false
+        }
+      ],
+      "callbacks": [
+        {
+          "name": "error",
+          "info": "Error"
+        },
+        {
+          "name": "success",
+          "info": "Success"
+        }
+      ]
+    }
+  ]
+}
