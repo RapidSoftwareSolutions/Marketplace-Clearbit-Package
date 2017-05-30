@@ -2,13 +2,23 @@
 
 # Clearbit Package
 Clearbit
-* Domain: [Clearbit](https://clearbit.com/)
+* Domain: [Clearbit](http://clearbit.com)
 * Credentials: apiKey
 
 ## How to get credentials: 
 0. Go to [Clearbit website](https://clearbit.com/)
 1. Register or log in
 2. Go to [API page](https://dashboard.clearbit.com/api) to get your apiKey
+
+## Custom datatypes: 
+ |Datatype|Description|Example
+ |--------|-----------|----------
+ |Datepicker|String which includes date and time|```2016-05-28 00:00:00```
+ |Map|String which includes latitude and longitude coma separated|```50.37, 26.56```
+ |List|Simple array|```["123", "sample"]``` 
+ |Select|String with predefined values|```sample```
+ |Array|Array of objects|```[{"Second name":"123","Age":"12","Photo":"sdf","Draft":"sdfsdf"},{"name":"adi","Second name":"bla","Age":"4","Photo":"asfserwe","Draft":"sdfsdf"}] ```
+ 
 
 ## Clearbit.findPerson
 Lets you retrieve social information associated with an email address, such as a person’s name, location and Twitter handle.
@@ -96,7 +106,7 @@ You can flag a company as incorrect and also optionally pass through a correct s
 | employees       | Number     | Amount of employees
 | logo            | String     | SRC of company logo
 | emailProvider   | Boolean    | Is the domain associated with a free email provider (i.e. Gmail)?
-| type            | String     | Type of company (education, government, nonprofit, private, public, personal)
+| type            | Select     | Type of company (education, government, nonprofit, private, public, personal)
 
 ## Clearbit.findInfoByEmail
 This endpoint expects an email address, and will return an object containing both the person and company (if found). A call to the combined lookup will only count as one API call.
@@ -132,7 +142,7 @@ Returns link to company logo
 | Field    | Type   | Description
 |----------|--------|----------
 | domain   | String | The domain of the company.
-| format   | String | Image format, either "png" or "jpg" (defaults to png)
+| format   | Select | Image format, either "png" or "jpg" (defaults to png)
 | size     | Number | Image size: length of longest side in pixels (default is 128)
 | greyscale| Boolean| Desaturates image if passed (defaults to false)
 

@@ -425,7 +425,8 @@
         },
         {
           "name": "type",
-          "type": "String",
+          "type": "Select",
+          "options": ["education", "government", "nonprofit", "private", "public", "personal"],
           "info": "Type of company (education, government, nonprofit, private, public, personal)",
           "required": false
         }
@@ -581,7 +582,8 @@
         },
         {
           "name": "format",
-          "type": "String",
+          "type": "Select",
+          "options": ["png", "jpg"],
           "info": "Image format, either \"png\" or \"jpg\" (defaults to png)",
           "required": false
         },
