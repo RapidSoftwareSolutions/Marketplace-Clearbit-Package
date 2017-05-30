@@ -95,7 +95,7 @@ You can flag a company as incorrect and also optionally pass through a correct s
 | apiKey          | credentials| Api key obtained from Clearbit
 | companyId       | String     | Id of the company you’d like to flag as inaccurate.
 | name            | String     | Name of company.
-| tags            | Array      | List of market categories the company is involved in
+| tags            | List       | List of market categories the company is involved in
 | description     | String     | Description of the company
 | raised          | Number     | Total amount raised
 | location        | String     | Address of company

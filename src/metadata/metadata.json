@@ -359,9 +359,14 @@
         },
         {
           "name": "tags",
-          "type": "Array",
+          "type": "List",
           "info": "List of market categories the company is involved in",
-          "required": false
+          "required": false,
+          "structure": {
+            "name": "tag",
+            "type": "String",
+            "info": "Single tag"
+          }
         },
         {
           "name": "description",
