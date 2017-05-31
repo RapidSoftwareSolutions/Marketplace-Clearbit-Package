@@ -24,7 +24,7 @@ $app->post('/api/Clearbit/flagCompanyInfoAsIncorrect', function ($request, $resp
     if (isset($post_data['args']['tags']) && count($post_data['args']['tags']) > 0) {
         $body[] = [
             'name' => 'tags',
-            'contents' => $post_data['args']['tags']
+            'contents' => json_encode($post_data['args']['tags'])
         ];
     }
     if (isset($post_data['args']['description']) && strlen($post_data['args']['description']) > 0) {
